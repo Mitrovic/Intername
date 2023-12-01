@@ -1,8 +1,24 @@
-import Vue from 'vue'
-import App from './App.vue'
+// main.js
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import axios from 'axios'
+import vuetify from './plugins/vuetify'
+import store from './store';
 
-Vue.config.productionTip = false
+axios.defaults.baseURL = 'http://intername.local/';
+
+Vue.prototype.$http = axios
+
+const storedToken = localStorage.getItem('authToken');
+if (storedToken) {
+  store.commit('setAuthToken', storedToken);
+}
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  router,
+  store,
+  vuetify,
+  render: h => h(App)
+});
