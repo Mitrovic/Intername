@@ -9,7 +9,11 @@ npm install
 ```
 npm run serve
 ```
-
+### Change default baseUrl in /src/main.js
+```
+axios.defaults.baseURL = 'http://apiroute';
+-- change http api route to your local api url
+```
 ### Compiles and minifies for production
 ```
 npm run build
