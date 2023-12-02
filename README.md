@@ -19,6 +19,14 @@ axios.defaults.baseURL = 'http://apiroute';
 npm run build
 ```
 
+### Dummy User Credentials
+
+For testing purposes use:
+
+email: author@example.com
+
+password: password
+
 ### Lints and fixes files
 ```
 npm run lint
